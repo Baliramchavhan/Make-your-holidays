@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancel Ticket</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<style>
+    /* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the form */
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Header Style */
+h1 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    border-color: #6a1b9a; /* Focus color on input fields */
+    outline: none;
+}
+
+/* Button Styling */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #6a1b9a; /* Purple button */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #8e24aa; /* Lighter purple on hover */
+}
+
+/* Message Box */
+.message {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.message p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.message p {
+    color: green; /* Default color for success message */
+}
+
+.message p.error {
+    color: red; /* Error message color */
+}
+
+
+</style>
+<body>
+    <div class="container">
+        <h1>Cancel Ticket</h1>
+        
+        <!-- Message displayed after POST request -->
+        <div class="message">
+            <p th:text="${message}"></p>
+        </div>
+
+        <!-- Form to cancel ticket -->
+        <form method="POST" action="/cancel-ticket">
+            <div class="form-group">
+                <label for="ticketId">Ticket ID</label>
+                <input type="number" id="ticketId" name="ticketId" required>
+            </div>
+
+            <div class="form-group">
+                <label for="userEmail">Your Email</label>
+                <input type="email" id="userEmail" name="userEmail" required>
+            </div>
+
+            <button type="submit" class="btn">Cancel Ticket</button>
+        </form>
+    </div>
+</body>
+</html>

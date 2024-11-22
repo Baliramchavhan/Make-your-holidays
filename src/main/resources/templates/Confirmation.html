@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            margin: 0 auto;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        p {
+            font-size: 16px;
+            color: #333;
+            margin: 10px 0;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration Successful!</h1>
+        <p>Dear <span th:text="${student.fullName}"></span>,</p>
+        <p>Thank you for registering with us. Your account has been successfully created.</p>
+        <p><strong>Your registration details:</strong></p>
+        <p><strong>ID:</strong> <span th:text="${student.id}"></span></p>
+        <p><strong>Email:</strong> <span th:text="${student.email}"></span></p>
+        <p><strong>Course:</strong> <span th:text="${student.course}"></span></p>
+        <p>To complete the registration process, please check your email for a confirmation link. If you do not receive the email within a few minutes, please check your spam folder.</p>
+        <p>If you have any questions or need further assistance, feel free to <a href="/contact">contact us</a>.</p>
+        <p>Thank you!</p>
+        <p>Best regards,<br>The [Your Application Name] Team</p>
+    </div>
+</body>
+</html>

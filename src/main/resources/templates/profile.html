@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Profile</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<style>
+	/* General Reset and Body Styling */
+	body {
+	    font-family: Arial, sans-serif;
+	    margin: 0;
+	    padding: 0;
+	    background: #f0f2f5;
+	    color: #333;
+	}
+
+	.container {
+	    max-width: 600px;
+	    margin: 20px auto;
+	    padding: 20px;
+	    background: #ffffff;
+	    border-radius: 12px;
+	    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+	    overflow: hidden;
+	}
+
+	.title {
+	    text-align: center;
+	    color: #333;
+	    font-size: 2.5em;
+	    margin-bottom: 20px;
+	    font-weight: bold;
+	}
+
+	/* Form Container Styling */
+	.form-container {
+	    display: flex;
+	    flex-direction: column;
+	    gap: 20px;
+	}
+
+	.profile-form,
+	.delete-form {
+	    background: #ffffff;
+	    padding: 20px;
+	    border-radius: 10px;
+	    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	    border: 1px solid #ddd;
+	    transition: box-shadow 0.3s ease, transform 0.3s ease;
+	}
+
+	.profile-form:hover,
+	.delete-form:hover {
+	    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+	    transform: scale(1.02);
+	}
+
+	label {
+	    display: block;
+	    font-size: 0.9em;
+	    color: #555;
+	    margin-bottom: 8px;
+	}
+
+	.input-field {
+	    width: 100%;
+	    padding: 12px;
+	    border: 1px solid #ddd;
+	    border-radius: 6px;
+	    box-sizing: border-box;
+	    margin-bottom: 15px;
+	    transition: border-color 0.3s, box-shadow 0.3s;
+	}
+
+	.input-field:focus {
+	    border-color: #007bff;
+	    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+	}
+
+	/* Button Styling */
+	.btn {
+	    display: inline-block;
+	    padding: 12px 24px;
+	    font-size: 1em;
+	    font-weight: bold;
+	    color: #fff;
+	    border: none;
+	    border-radius: 8px;
+	    cursor: pointer;
+	    transition: background 0.3s, transform 0.2s;
+	}
+
+	.update-btn {
+	    background: #28a745;
+	}
+
+	.update-btn:hover {
+	    background: #218838;
+	}
+
+	.delete-btn {
+	    background: #dc3545;
+	}
+
+	.delete-btn:hover {
+	    background: #c82333;
+	}
+
+	/* 3D Effect on Buttons */
+	.btn:active {
+	    transform: translateY(2px);
+	    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+	}
+
+</style>
+<body>
+    <div class="container">
+        <h1 class="title">User Profile</h1>
+        <div class="form-container">
+            <form th:action="@{/profile/update}" th:object="${user}" method="post" class="profile-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" th:field="*{username}" readonly class="input-field">
+                <label for="password">Password:</label>
+                <input type="password" id="password" th:field="*{password}" class="input-field">
+                <label for="email">Email:</label>
+                <input type="email" id="email" th:field="*{email}" class="input-field">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" th:field="*{fullName}" class="input-field">
+                <button type="submit" class="btn update-btn">Update</button>
+            </form>
+            <form th:action="@{/profile/delete}" method="post" class="delete-form">
+                <input type="hidden" th:value="${user.id}" name="id">
+                <button type="submit" class="btn delete-btn">Delete Account</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

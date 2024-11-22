@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #6f42c1; /* Purple background */
+}
+
+.nav-link {
+    color: white !important;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.jumbotron {
+    background: url('https://example.com/your-header-image.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 80px 20px;
+}
+
+.package-card {
+    margin-bottom: 30px;
+    transition: transform 0.2s;
+}
+
+.package-card:hover {
+    transform: scale(1.05);
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-img-top {
+    height: 200px; /* Fixed height for images */
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #343a40;
+}
+
+.card-text {
+    color: #6c757d;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 40px;
+    color: #6f42c1;
+}
+
+.container-fluid {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+
+    /* Beach Packages Section */
+h2 {
+    text-align: center; /* Center the heading */
+    margin: 30px 0; /* Space above and below the heading */
+    font-family: 'Arial', sans-serif; /* Change font family */
+    color: #333; /* Dark gray color for the heading */
+}
+
+/* Card Styles */
+.package-card {
+    margin-bottom: 30px; /* Space below each card */
+}
+
+.card {
+    border: none; /* Remove card border */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensure images don't overflow */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    transition: transform 0.3s; /* Smooth scaling on hover */
+}
+
+.card-img-top {
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Cover the entire area of the image */
+}
+
+.card-body {
+    padding: 15px; /* Padding inside the card */
+}
+
+.card-title {
+    font-size: 1.25rem; /* Font size for card title */
+    color: #6f42c1; /* Purple color for titles */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.card-text {
+    font-size: 0.9rem; /* Slightly smaller font size for description */
+    color: #555; /* Gray color for text */
+}
+
+/* Hover Effect for Cards */
+.card:hover {
+    transform: scale(1.05); /* Scale up card slightly on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 150px; /* Adjust image height on smaller screens */
+    }
+
+    .card-title {
+        font-size: 1.1rem; /* Slightly smaller title on mobile */
+    }
+
+    .card-text {
+        font-size: 0.85rem; /* Smaller text on mobile */
+    }
+}
+
+
+/* Navbar Styles */
+.navbar {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between brand and nav items */
+    align-items: center; /* Center items vertically */
+    background-color: hsl(51, 96%, 51%); /* Purple background */
+    padding: 10px 20px; /* Padding for the navbar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 5px;
+}
+
+.navbar-brand img {
+    height: 120px; /* Set a height for the logo */
+    width: auto; /* Maintain aspect ratio */
+    border-radius: 50%;
+}
+.h1{
+    display: flex;
+    justify-content: space-evenly; 
+}
+.container-fluid1{
+        display: flex;
+        justify-content:space-between;
+    }
+.navbar-nav {
+    display: flex; /* Use flexbox for nav items */
+    list-style: none; /* Remove default list styles */
+    margin-left:400px; /* Align items to the right */
+    padding: 0; /* Remove padding */
+    
+}
+
+.nav-item {
+    margin: 0 15px; /* Space between nav items */
+}
+
+.nav-link {
+    color: white; /* White text color */
+    font-weight: 500; /* Medium font weight */
+    text-transform: uppercase; /* Uppercase letters */
+    padding: 7px 10px; /* Padding for links */
+    border-radius: 5px; /* Rounded corners for links */
+    /*transition: background-color 0.3s, color 0.3s, transform 0.3s;  Smooth transitions */
+    text-decoration: none; /* Remove underline */
+}
+
+.nav-link:hover {
+   /* background-color: rgba(255, 255, 255, 0.2);  Light hover effect */
+    color: #f8f9fa; /* Slightly lighter text color on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column; 
+        text-align: center;  
+    } 
+}
+
+    .nav-item {
+        margin: 5px 0; /* Space between items when stacked */
+    }
+   
+
+
+
+
+    </style>
+   </head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-light bg-purple">
+        <div class="container-fluid1">
+            
+            <div class="h1">
+            <a class="navbar-brand" href="#">
+                
+                <img src="data:image/jpeg;base64,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" alt="Travel Tours">
+                
+            </a>
+            <H3 style="align-items: center; margin-top: 51px;margin-left: 20px;"> HAPPY TRAVALS</H3>
+        </div>
+            <div class="navbar-nav" id="navbarNav">
+                <ul class="navbar">
+                    <li class="nav-item"><a class="nav-link" href="#packages">Beach Packages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/bookings/Home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/books">Book</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/bookings/holidaypackage">Holiday-pakage</a></li>
+                </ul>
+           
+        </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="jumbotron text-center">
+        <h1 class="display-4"></h1>
+    </header>
+
+    <!-- Beach Packages Section -->
+    <section id="packages" class="container-fluid my-5">
+        <div class="row">
+
+            <!-- Karnataka Packages -->
+            <h2>Karnataka Beaches</h2>
+            <div class="col-md-4 package-card">
+                <div class="card">
+                    <img src="data:image/jpeg;base64,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" class="card-img-top" alt="Gokarna Beach">
+                    <div class="card-body">
+                        <h5 class="card-title">Gokarna</h5>
+                        <p class="card-text">Known for its laid-back vibe and pristine beaches.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more Karnataka beach packages here... -->
+            <div class="row">
+                <!-- Beach 1 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://example.com/your-image1.jpg" class="card-img-top" alt="Gokarna Beach">
+                        <div class="card-body">
+                            <h5 class="card-title">Gokarna Beach</h5>
+                            <p class="card-text">A serene beach known for its relaxed vibe and stunning coastline. Perfect for sunbathing and spiritual retreats.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Beach 2 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://example.com/your-image2.jpg" class="card-img-top" alt="Kudle Beach">
+                        <div class="card-body">
+                            <h5 class="card-title">Kudle Beach</h5>
+                            <p class="card-text">A picturesque beach with golden sands and beautiful sunsets, ideal for a peaceful getaway.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Beach 3 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://example.com/your-image3.jpg" class="card-img-top" alt="Om Beach">
+                        <div class="card-body">
+                            <h5 class="card-title">Om Beach</h5>
+                            <p class="card-text">Famous for its shape resembling the Om symbol, this beach is a hotspot for yoga and relaxation.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Beach 4 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://example.com/your-image4.jpg" class="card-img-top" alt="Malpe Beach">
+                        <div class="card-body">
+                            <h5 class="card-title">Malpe Beach</h5>
+                            <p class="card-text">Known for its water sports, this beach is also close to St. Mary's Island, making it a popular tourist destination.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Beach 5 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://example.com/your-image5.jpg" class="card-img-top" alt="Kaup Beach">
+                        <div class="card-body">
+                            <h5 class="card-title">Kaup Beach</h5>
+                            <p class="card-text">Features a lighthouse and stunning views, perfect for family outings and picnics.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Beach 6 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://example.com/your-image6.jpg" class="card-img-top" alt="Ullal Beach">
+                        <div class="card-body">
+                            <h5 class="card-title">Ullal Beach</h5>
+                            <p class="card-text">Famous for its serene environment and picturesque sunsets, ideal for relaxation.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Beach 7 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://example.com/your-image7.jpg" class="card-img-top" alt="Tarkarli Beach">
+                        <div class="card-body">
+                            <h5 class="card-title">Tarkarli Beach</h5>
+                            <p class="card-text">Known for its clear waters and water sports, making it a favorite among adventure seekers.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Beach 8 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://example.com/your-image8.jpg" class="card-img-top" alt="Devbagh Beach">
+                        <div class="card-body">
+                            <h5 class="card-title">Devbagh Beach</h5>
+                            <p class="card-text">A tranquil beach with soft sand, perfect for leisurely walks and beach activities.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Beach 9 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://example.com/your-image9.jpg" class="card-img-top" alt="Ganpatipule Beach">
+                        <div class="card-body">
+                            <h5 class="card-title">Ganpatipule Beach</h5>
+                            <p class="card-text">Renowned for its natural beauty and temples, it's a perfect spot for cultural exploration.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Beach 10 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://example.com/your-image10.jpg" class="card-img-top" alt="Murudeshwar Beach">
+                        <div class="card-body">
+                            <h5 class="card-title">Murudeshwar Beach</h5>
+                            <p class="card-text">Home to one of the tallest Shiva statues, it's a blend of spirituality and scenic beauty.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Maharashtra Packages -->
+            <h2>Maharashtra Beaches</h2>
+            <div class="col-md-4 package-card">
+                <div class="card">
+                    <img src="c:/Users/Lenovo/Desktop/images/juhu.jpg" class="card-img-top" alt="Juhu Beach">
+                    <div class="card-body">
+                        <h5 class="card-title">Juhu Beach</h5>
+                        <p class="card-text">Famous for its vibrant atmosphere and street food.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more Maharashtra beach packages here... -->
+           
+    
+              
+                <!-- Header Section -->
+                <header class="jumbotron text-center">
+                    <h1 class="display-4">Maharashtra Beaches</h1>
+                </header>
+            
+    
+                        <!-- Beach 2 -->
+                        <div class="col-md-4 package-card">
+                            <div class="card">
+                                <img src="c:/Users/Lenovo/Desktop/images/chowpatty.jpg" class="card-img-top" alt="Chowpatty Beach">
+                                <div class="card-body">
+                                    <h5 class="card-title">Chowpatty Beach</h5>
+                                    <p class="card-text">Located in Mumbai, it's known for its food stalls and the scenic view of the sunset.</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Beach 3 -->
+                        <div class="col-md-4 package-card">
+                            <div class="card">
+                                <img src="c:/Users/Lenovo/Desktop/images/versova.jpg" class="card-img-top" alt="Versova Beach">
+                                <div class="card-body">
+                                    <h5 class="card-title">Versova Beach</h5>
+                                    <p class="card-text">A quieter alternative to Juhu, this beach is famous for its film shoots and local fishing community.</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Beach 4 -->
+                        <div class="col-md-4 package-card">
+                            <div class="card">
+                                <img src="c:/Users/Lenovo/Desktop/images/alibaug.jpg" class="card-img-top" alt="Alibaug Beach">
+                                <div class="card-body">
+                                    <h5 class="card-title">Alibaug Beach</h5>
+                                    <p class="card-text">A picturesque beach near Mumbai, ideal for a weekend getaway, with clean sands and water sports.</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Beach 5 -->
+                        <div class="col-md-4 package-card">
+                            <div class="card">
+                                <img src="c:/Users/Lenovo/Desktop/images/mandwa.jpg" class="card-img-top" alt="Mandwa Beach">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mandwa Beach</h5>
+                                    <p class="card-text">Known for its tranquility, it’s a popular destination for beach resorts and ferry rides from Mumbai.</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Beach 6 -->
+                        <div class="col-md-4 package-card">
+                            <div class="card">
+                                <img src="c:/Users/Lenovo/Desktop/images/ganpatipule.jpg" class="card-img-top" alt="Ganpatipule Beach">
+                                <div class="card-body">
+                                    <h5 class="card-title">Ganpatipule Beach</h5>
+                                    <p class="card-text">A serene beach famous for its Ganapati temple and beautiful landscapes, perfect for a family trip.</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Beach 7 -->
+                        <div class="col-md-4 package-card">
+                            <div class="card">
+                                <img src="c:/Users/Lenovo/Desktop/images/kihim.jpg" class="card-img-top" alt="Kihim Beach">
+                                <div class="card-body">
+                                    <h5 class="card-title">Kihim Beach</h5>
+                                    <p class="card-text">Located near Alibaug, known for its soft sands and lush greenery, great for relaxation.</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Beach 8 -->
+                        <div class="col-md-4 package-card">
+                            <div class="card">
+                                <img src="c:/Users/Lenovo/Desktop/images/malvan.jpg" class="card-img-top" alt="Malvan Beach">
+                                <div class="card-body">
+                                    <h5 class="card-title">Malvan Beach</h5>
+                                    <p class="card-text">A hidden gem with pristine sands, famous for water sports like scuba diving and snorkeling.</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Beach 9 -->
+                        <div class="col-md-4 package-card">
+                            <div class="card">
+                                <img src="c:/Users/Lenovo/Desktop/images/tarkarli.jpg" class="card-img-top" alt="Tarkarli Beach">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tarkarli Beach</h5>
+                                    <p class="card-text">Known for its clear waters and water sports, it’s perfect for adventure lovers and nature enthusiasts.</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Beach 10 -->
+                        <div class="col-md-4 package-card">
+                            <div class="card">
+                                <img src="c:/Users/Lenovo/Desktop/images/dapoli.jpg" class="card-img-top" alt="Dapoli Beach">
+                                <div class="card-body">
+                                    <h5 class="card-title">Dapoli Beach</h5>
+                                    <p class="card-text">A lesser-known beach ideal for peaceful vacations, with opportunities for dolphin watching.</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Beach 11 -->
+                        <div class="col-md-4 package-card">
+                            <div class="card">
+                                <img src="c:/Users/Lenovo/Desktop/images/murud-janjira.jpg" class="card-img-top" alt="Murud-Janjira Beach">
+                                <div class="card-body">
+                                    <h5 class="card-title">Murud-Janjira Beach</h5>
+                                    <p class="card-text">Famous for the Janjira Fort, this beach offers stunning views and a rich history.</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Beach 12 -->
+                        <div class="col-md-4 package-card">
+                            <div class="card">
+                                <img src="c:/Users/Lenovo/Desktop/images/awas.jpg" class="card-img-top" alt="Awas Beach">
+                                <div class="card-body">
+                                    <h5 class="card-title">Awas Beach</h5>
+                                    <p class="card-text">A quiet beach perfect for a peaceful getaway, surrounded by lush green hills.</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Beach 13 -->
+                        <div class="col-md-4 package-card">
+                            <div class="card">
+                                <img src="c:/Users/Lenovo/Desktop/images/harihareshwar.jpg" class="card-img-top" alt="Harihareshwar Beach">
+                                <div class="card-body">
+                                    <h5 class="card-title">Harihareshwar Beach</h5>
+                                    <p class="card-text">Known for its temple and scenic beauty, it offers a peaceful environment for relaxation.</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Beach 14 -->
+                        <div class="col-md-4 package-card">
+                            <div class="card">
+                                <img src="c:/Users/Lenovo/Desktop/images/karde.jpg" class="card-img-top" alt="Karde Beach">
+                                <div class="card-body">
+                                    <h5 class="card-title">Karde Beach</h5>
+                                    <p class="card-text">A beautiful beach ideal for family outings, with opportunities for water sports and dolphin sightings.</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Beach 15 -->
+                        <div class="col-md-4 package-card">
+                            <div class="card">
+                                <img src="c:/Users/Lenovo/Desktop/images/anjarle.jpg" class="card-img-top" alt="Anjarle Beach">
+                                <div class="card-body">
+                                    <h5 class="card-title">Anjarle Beach</h5>
+                                    <p class="card-text">Famous for its turtle conservation program, this beach is less crowded and offers stunning views.</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Beach 16 -->
+                        <div class="col-md-4 package-card">
+                            <div class="card">
+                                <img src="c:/Users/Lenovo/Desktop/images/bhogwe.jpg" class="card-img-top" alt="Bhogwe Beach">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bhogwe Beach</h5>
+                                    <p class="card-text">A serene beach that’s perfect for swimming and relaxing, surrounded by beautiful scenery.</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Beach 17 -->
+                        <div class="col-md-4 package-card">
+                            <div class="card">
+                                <img src="c:/Users/Lenovo/Desktop/images/devbagh.jpg" class="card-img-top" alt="Devbagh Beach">
+                                <div class="card-body">
+                                    <h5 class="card-title">Devbagh Beach</h5>
+                                    <p class="card-text">Known for its golden sands and water sports, it’s a perfect spot for adventure seekers.</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Beach 18 -->
+                        <div class="col-md-4 package-card">
+                            <div class="card">
+                                <img src="c:/Users/Lenovo/Desktop/images/velneshwar.jpg" class="card-img-top" alt="Velneshwar Beach">
+                                <div class="card-body">
+                                    <h5 class="card-title">Velneshwar Beach</h5>
+                                    <p class="card-text">A tranquil beach famous for its coconut trees and the nearby ancient Shiva temple.</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Beach 19 -->
+                        <div class="col-md-4 package-card">
+                            <div class="card">
+                                <img src="c:/Users/Lenovo/Desktop/images/guhagar.jpg" class="card-img-top" alt="Guhagar Beach">
+                                <div class="card-body">
+                                    <h5 class="card-title">Guhagar Beach</h5>
+                                    <p class="card-text">Known for its soft sands and clear waters, it's a great place for relaxation and water sports.</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Beach 20 -->
+                        <div class="col-md-4 package-card">
+                            <div class="card">
+                                <img src="c:/Users/Lenovo/Desktop/images/kihim.jpg" class="card-img-top" alt="Kihim Beach">
+                                <div class="card-body">
+                                    <h5 class="card-title">Kihim Beach</h5>
+                                    <p class="card-text">Ideal for picnics, this beach is known for its soft sands and tranquil environment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            <!-- Telangana Beaches -->
+            <h2>Telangana Beaches</h2>
+            <div class="col-md-4 package-card">
+                <div class="card">
+                    <img src="c:/Users/Lenovo/Desktop/images/hussain-sagar.jpg" class="card-img-top" alt="Hussain Sagar Lake">
+                    <div class="card-body">
+                        <h5 class="card-title">Hussain Sagar Lake</h5>
+                        <p class="card-text">A beautiful artificial lake with scenic views.</p>
+                    </div>
+                </div>
+            </div>
+
+          
+                <div class="row">
+                    <!-- Beach 1 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://example.com/your-image1.jpg" class="card-img-top" alt="Hussain Sagar Lake">
+                            <div class="card-body">
+                                <h5 class="card-title">Hussain Sagar Lake</h5>
+                                <p class="card-text">A popular artificial lake in Hyderabad, known for its stunning views and the giant Buddha statue.</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Beach 2 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://example.com/your-image2.jpg" class="card-img-top" alt="Shamirpet Lake">
+                            <div class="card-body">
+                                <h5 class="card-title">Shamirpet Lake</h5>
+                                <p class="card-text">A serene lake located near Hyderabad, ideal for picnics and nature walks.</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Beach 3 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://example.com/your-image3.jpg" class="card-img-top" alt="Sultanpur Lake">
+                            <div class="card-body">
+                                <h5 class="card-title">Sultanpur Lake</h5>
+                                <p class="card-text">Known for bird watching, this lake attracts migratory birds during the winter season.</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Beach 4 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://example.com/your-image4.jpg" class="card-img-top" alt="Ramagundam">
+                            <div class="card-body">
+                                <h5 class="card-title">Ramagundam</h5>
+                                <p class="card-text">Famous for its power plant and scenic surroundings, it's a nice spot for a day out.</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Beach 5 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://example.com/your-image5.jpg" class="card-img-top" alt="Kuntala Waterfall">
+                            <div class="card-body">
+                                <h5 class="card-title">Kuntala Waterfall</h5>
+                                <p class="card-text">The highest waterfall in Telangana, surrounded by lush greenery, perfect for a nature getaway.</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Beach 6 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://example.com/your-image6.jpg" class="card-img-top" alt="Pochampally">
+                            <div class="card-body">
+                                <h5 class="card-title">Pochampally</h5>
+                                <p class="card-text">Famous for its traditional Ikat weaving, it's also near a beautiful lake for relaxation.</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Beach 7 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://example.com/your-image7.jpg" class="card-img-top" alt="Bhadrakali Temple">
+                            <div class="card-body">
+                                <h5 class="card-title">Bhadrakali Temple</h5>
+                                <p class="card-text">Located near Warangal, this temple is set by a picturesque lake, ideal for a spiritual visit.</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Beach 8 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://example.com/your-image8.jpg" class="card-img-top" alt="Nagarjuna Sagar">
+                            <div class="card-body">
+                                <h5 class="card-title">Nagarjuna Sagar</h5>
+                                <p class="card-text">A large dam and lake area, perfect for boating and enjoying scenic views.</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Beach 9 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://example.com/your-image9.jpg" class="card-img-top" alt="Manjeera Wildlife Sanctuary">
+                            <div class="card-body">
+                                <h5 class="card-title">Manjeera Wildlife Sanctuary</h5>
+                                <p class="card-text">A serene area known for its wildlife and scenic lakes, great for nature enthusiasts.</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Beach 10 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://example.com/your-image10.jpg" class="card-img-top" alt="Keesaragutta">
+                            <div class="card-body">
+                                <h5 class="card-title">Keesaragutta</h5>
+                                <p class="card-text">Known for its ancient temple and hilltop views, it's also near a beautiful water body.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+         
+        </div>
+    </section>
+</body>
+
+</html>

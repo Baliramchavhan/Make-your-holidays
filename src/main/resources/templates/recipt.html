@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Your Ticket</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff; /* Light blue background */
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px; /* Increased width */
+            margin: auto;
+            background: linear-gradient(to right, #ffffff, #e6f7ff); /* Gradient background */
+            padding: 40px; /* Increased padding */
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        h1 {
+            color: #5cb85c;
+            margin-bottom: 10px;
+            font-size: 28px; /* Increased font size */
+        }
+        .description {
+            font-size: 1.5em; /* Increased font size */
+            margin-bottom: 20px;
+            color: #555;
+            font-weight: bold; /* Bold description */
+        }
+        .promo {
+            font-size: 1.2em; /* Promotional text size */
+            color: #444;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #d1e7dd; /* Light green background */
+            border-left: 5px solid #5cb85c; /* Green left border */
+            text-align: left; /* Align text to the left */
+        }
+        .ticket-details {
+            margin-bottom: 20px;
+            text-align: left;
+            border: 2px solid #5cb85c; /* Green border */
+            padding: 20px; /* Increased padding */
+            border-radius: 8px;
+            background-color: #ffffff; /* White background for details */
+        }
+        .ticket-details p {
+            margin: 10px 0;
+            font-size: 1.2em; /* Increased font size for details */
+            color: #333; /* Dark text color */
+        }
+        .label {
+            font-weight: bold;
+            color: #5cb85c; /* Green color for labels */
+        }
+        button {
+            padding: 12px 25px; /* Increased button size */
+            background-color: #5cb85c;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+            font-size: 1.1em; /* Increased button text size */
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        .logo {
+            width: 120px; /* Increased logo size */
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="https://yourlogo.com/logo.png" alt="Travel Logo" class="logo" />
+    <h1>Your Ticket</h1>
+    <p class="description">Make your travel happy with our amazing services!</p>
+
+
+    <div class="ticket-details">
+        <p><span class="lable">Id:</span><span th:text="${booking.id}"></span></p>
+        <p><span class="label">Name:</span> <span th:text="${booking.name}"></span></p>
+        <p><span class="label">Email:</span> <span th:text="${booking.email}"></span></p>
+        <p><span class="label">Starting Point:</span> <span th:text="${booking.startDestination}"></span></p>
+        <p><span class="label">End Point:</span> <span th:text="${booking.endDestination}"></span></p>
+        <p><span class="label">Number of Tickets:</span> <span th:text="${booking.numberOfTickets}"></span></p>
+    </div>
+
+	
+	<div class="promo">
+	        <h2>Why Choose Our Travel App?</h2>
+	        <ul>
+	            <li>🌍 Comprehensive travel options: Choose from a wide range of destinations.</li>
+	            <li>🕒 Real-time updates: Get instant notifications about your bookings.</li>
+	            <li>💳 Secure transactions: Your data is protected with top-notch security.</li>
+	            <li>🌟 24/7 Customer support: We're here to help you at any time!</li>
+	            <li>✨ User-friendly interface: Easy navigation to make your booking seamless.</li>
+	        </ul>
+	    </div>
+		
+    <a th:href="@{download(bookingId=${booking.id})}">
+        <button>Download Ticket</button>
+    </a>
+    
+    <a th:href="@{cancel(bookingId=${booking.id})}">
+        <button>Cancel Booking</button>
+    </a>
+</div>
+
+</body>
+</html>

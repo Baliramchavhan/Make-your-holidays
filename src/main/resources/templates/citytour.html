@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Tour Packages</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="C:\Users\Lenovo\Desktop\Travel Tour Website\style.css">
+    <link rel="stylesheet" href="C:\Users\Lenovo\Desktop\Travel Tour Website\css\style.css">
+    
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Link -->
+
+    <!-- Font Awesome Cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- Font Awesome Cdn -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            text-align: left;
+            background-color: #f5f5f5;
+        }
+
+        .bg-purple {
+            background-color: rgb(4, 3, 66) !important;
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: white;
+            font-size: 25px;
+            height: 80px;
+        }
+
+        .navbar {
+            justify-content: center;
+        }
+
+        .navbar-brand {
+            margin-right: auto;
+            height: 70px;
+            width: 30px;
+        }
+    
+        img, svg {
+            vertical-align: middle;
+            height: 70px;
+            width: 151px;
+        }
+
+        .navbar-nav .nav-link {
+            padding-right: 1rem;
+            padding-left: 1rem;
+        }
+
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .jumbotron {
+            background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2)), url("c:/Users/Lenovo/Desktop/images/bg.jpg");
+            color: white;
+            padding: 4rem 2rem;
+            height: 510px;
+        }
+
+        .package-card {
+            margin-bottom: 2rem;
+        }
+
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+        }
+
+        .bg-black {
+            background-color: black;
+            color: white;
+        }
+
+        .card-title {
+            margin-bottom: .5rem;
+            color: darkred;
+            font-size: 30px;
+            font-family: 'Times New Roman', Times, serif;
+            font: bold;
+        }
+        
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color:black;
+            text-align: justify;
+        }
+
+        .jumbotron .row {
+            height: 100%;
+        }
+
+        .jumbotron .col-md-6 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .jumbotron img {
+            max-width: 100%;
+            height: auto;
+        }
+       
+/* Navbar Styles */
+
+
+.navbar-brand img {
+    height: 100px; /* Set a height for the logo */
+    width: auto; /* Maintain aspect ratio */
+    border-radius: 50%;
+    margin-left: -130px;
+}
+.h1{
+    display: flex;
+    justify-content: space-evenly; 
+}
+.container-fluid1{
+        display: flex;
+        justify-content:space-between;
+        margin-top:10px ;
+    }
+.navbar-nav {
+    display: flex; /* Use flexbox for nav items */
+    list-style: none; /* Remove default list styles */
+    margin-left:360px; /* Align items to the right */
+    padding: 0; /* Remove padding */
+    
+    
+}
+
+.nav-item {
+    margin: 0 15px; /* Space between nav items */
+}
+
+.nav-link {
+    color: white; /* White text color */
+    font-weight: 500; /* Medium font weight */
+    text-transform: uppercase; /* Uppercase letters */
+    padding: 7px 10px; /* Padding for links */
+    border-radius: 5px; /* Rounded corners for links */
+    /*transition: background-color 0.3s, color 0.3s, transform 0.3s;  Smooth transitions */
+    text-decoration: none; /* Remove underline */
+}
+
+.nav-link:hover {
+   /* background-color: rgba(255, 255, 255, 0.2);  Light hover effect */
+    color: #f8f9fa; /* Slightly lighter text color on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+
+
+
+    .nav-item {
+        margin: 5px 0; /* Space between items when stacked */
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-purple">
+        <div class="container-fluid1">
+            
+            <div class="h1">
+            <a class="navbar-brand" href="#">
+                
+                <img src="data:image/jpeg;base64,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" alt="Travel Tours">
+                
+            </a>
+            <H3 style="align-items: center;color: white; margin-top: 35px;margin-left: -30px;"> HAPPY TRAVALS</H3>
+        </div>
+            <div class="navbar-nav" id="navbarNav">
+                <ul class="navbar">
+                   
+                    <li class="nav-item"><a class="nav-link" href="/bookings/Home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/books">Book</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/bookings/holidaypackage">Holiday-pakage</a></li>
+                </ul>
+           
+        </div>
+        </div>
+    </nav>
+
+   
+
+    <!-- Header Section -->
+    <header class="jumbotron text-center">
+
+            <div class="row">
+                
+                    <h1 class="display-4">City Tour Packages</h1>
+                    
+               
+            </div>
+        
+    </header>
+
+    <!-- City Tour Packages Section -->
+    <section id="packages" class="container-fluid my-5">
+        <div class="row">
+            <!-- Package 1 -->
+            <div class="col-md-4 package-card">
+                <div class="card">
+                    <img src="c:\Users\Lenovo\Desktop\images\Lal-Bagh.jpg" class="card-img-top" alt="Bangalore">
+                    <div class="card-body">
+                        <h5 class="card-title">Bangalore</h5>
+                        <p class="card-text">Explore the vibrant city of Bangalore with visits to Lalbagh Botanical Garden, Bangalore Palace, and Cubbon Park.</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Duration: 3 Days</li>
+                            <li class="list-group-item">Price: $300</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 2 -->
+            <div class="col-md-4 package-card">
+                <div class="card">
+                    <img src="c:\Users\Lenovo\Desktop\images\city.jpg" class="card-img-top" alt="Mysore">
+                    <div class="card-body">
+                        <h5 class="card-title">Mysore</h5>
+                        <p class="card-text">Discover the royal heritage of Mysore by visiting Mysore Palace, Chamundi Hill, and Brindavan Gardens.</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Duration: 2 Days</li>
+                            <li class="list-group-item">Price: $250</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 3 -->
+            <div class="col-md-4 package-card">
+                <div class="card">
+                    <img src="c:\Users\Lenovo\Desktop\images\manglore.jpg" class="card-img-top" alt="Mangalore">
+                    <div class="card-body">
+                        <h5 class="card-title">Mangalore</h5>
+                        <p class="card-text">Experience the coastal charm of Mangalore with visits to Tannirbhavi Beach, St. Aloysius Chapel, and Mangaladevi Temple.</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Duration: 3 Days</li>
+                            <li class="list-group-item">Price: $280</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 4 -->
+            <div class="col-md-4 package-card">
+                <div class="card">
+
+
+                        <img src="c:\Users\Lenovo\Desktop\images\hubli.jpg" class="card-img-top" alt="Hubli">
+                        <div class="card-body">
+                            <h5 class="card-title">Hubli</h5>
+                            <p class="card-text">Visit the key attractions of Hubli including Unkal Lake, Nrupatunga Betta, and Chandramouleshwara Temple.</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Duration: 2 Days</li>
+                                <li class="list-group-item">Price: $220</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 5 -->
+                <div class="col-md-4 package-card">
+                    <div class="card">
+                        <img src="c:\Users\Lenovo\Desktop\images\Belgaum3.png" class="card-img-top" alt="Belgaum">
+                        <div class="card-body">
+                            <h5 class="card-title">Belgaum</h5>
+                            <p class="card-text">Explore Belgaum with its historical landmarks such as Belgaum Fort, Kapileshwara Temple, and Gokak Falls.</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Duration: 3 Days</li>
+                                <li class="list-group-item">Price: $270</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 6 -->
+                <div class="col-md-4 package-card">
+                    <div class="card">
+                        <img src="c:\Users\Lenovo\Desktop\images\gul.jpg" class="card-img-top" alt="Gulbarga">
+                        <div class="card-body">
+                            <h5 class="card-title">Gulbarga</h5>
+                            <p class="card-text">Discover the rich history of Gulbarga by visiting Gulbarga Fort, Jama Masjid, and Buddha Vihar.</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Duration: 2 Days</li>
+                                <li class="list-group-item">Price: $240</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 7 -->
+                <div class="col-md-4 package-card">
+                    <div class="card">
+                        <img src="c:\Users\Lenovo\Desktop\images\bjapur.jpg" class="card-img-top" alt="Bijapur">
+                        <div class="card-body">
+                            <h5 class="card-title">Bijapur</h5>
+                            <p class="card-text">Explore the architectural wonders of Bijapur with visits to Gol Gumbaz, Ibrahim Rauza, and Malik-e-Maidan.</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Duration: 2 Days</li>
+                                <li class="list-group-item">Price: $230</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 8 -->
+                <div class="col-md-4 package-card">
+                    <div class="card">
+                        <img src="c:\Users\Lenovo\Desktop\images\hampi.webp" class="card-img-top" alt="Hampi">
+                        <div class="card-body">
+                            <h5 class="card-title">Hampi</h5>
+                            <p class="card-text">Discover the ancient ruins of Hampi, a UNESCO World Heritage Site, with visits to Virupaksha Temple, Vithala Temple, and Lotus Mahal.</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Duration: 3 Days</li>
+                                <li class="list-group-item">Price: $290</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 9 -->
+                <div class="col-md-4 package-card">
+                    <div class="card">
+                        <img src="c:\Users\Lenovo\Desktop\images\shimoga.avif" class="card-img-top" alt="Shimoga">
+                        <div class="card-body">
+                            <h5 class="card-title">Shimoga</h5>
+                            <p class="card-text">Enjoy the natural beauty of Shimoga with visits to Jog Falls, Agumbe, and Kodachadri.</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Duration: 3 Days</li>
+                                <li class="list-group-item">Price: $260</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-black py-4 text-center">
+            <p class="b1">&copy; 2024 Travel Tours. All Rights Reserved.</p>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    </main>
+</body>
+
+</html>

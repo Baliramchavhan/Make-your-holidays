@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+    <style>
+        body {
+            background-color: #e0f7fa; /* Light blue background */
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #004d40; /* Dark teal color */
+            perspective: 1000px; /* For 3D effect */
+        }
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            width: 100%;
+            margin: 20px;
+            overflow: hidden;
+        }
+        .registration-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            position: relative;
+            transform: rotateY(0deg);
+            transition: transform 0.4s;
+            flex: 1;
+            margin-right: 20px;
+        }
+        .registration-card:hover {
+            transform: rotateY(10deg); /* 3D effect on hover */
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #00796b; /* Teal color */
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #004d40; /* Dark teal border */
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+        input:focus {
+            border-color: #00796b; /* Lighter teal on focus */
+            outline: none;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #00796b; /* Teal button */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #004d40; /* Darker teal on hover */
+            transform: scale(1.05); /* Slight scale effect */
+        }
+        .footer-text {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .footer-text a {
+            color: #00796b; /* Teal color */
+            text-decoration: none;
+        }
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+        .demo-section {
+            background: rgba(0, 121, 107, 0.1); /* Light overlay */
+            border-radius: 15px;
+            padding: 20px;
+            flex: 1;
+            margin-left: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .demo-section h3 {
+            color: #00796b; /* Teal color */
+            margin-bottom: 10px;
+        }
+        .list-unstyled {
+            list-style: none;
+            padding: 0;
+        }
+        .list-unstyled li {
+            margin: 5px 0;
+        }
+        .demo-section img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="registration-card">
+            <h2>Register</h2>
+            <form th:action="@{register}" method="post" th:object="${user}">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" th:field="*{fullname}" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" th:field="*{email}" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" th:field="*{username}" placeholder="Choose a username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" th:field="*{password}" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit">Register</button>
+                <p th:text="${regError}" style="color: red;" class="error"></p> 
+                <div class="footer-text">If you already have an account, <a href="login">Login</a></div>
+            
+            </form>
+           
+
+        </div>
+
+        <div class="demo-section">
+            <h3>Explore the World with Our Travel App!</h3>
+            <p>Join a community of explorers and experience the best travel deals.</p>
+            <ul class="list-unstyled">
+                <li>✨ Discover unique destinations</li>
+                <li>🌍 Connect with fellow travelers</li>
+                <li>🏨 Book your dream accommodations</li>
+                <li>✈️ Plan your next adventure easily</li>
+            </ul>
+            <p>Start your journey with us today!</p>
+            <img src="https://t3.ftcdn.net/jpg/05/09/27/46/240_F_509274673_e3MLr6rTVPlPbNOTKRrIMTk2fZwqkcst.jpg" alt="Travel Image" /> <!-- Travel-related image -->
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1051 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Website</title>
+
+    <link rel="stylesheet" href="E:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\css\style.css">
+    <link rel="stylesheet" href="E:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\style.css">
+    
+
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Link -->
+
+
+    <!-- Font Awesome Cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- Font Awesome Cdn -->
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+
+	<style>
+
+		*{
+		    margin: 0;
+		    padding: 0;
+		    box-sizing: border-box;
+		    text-decoration: none;
+		    list-style: none;
+		    scroll-behavior: smooth;
+		    font-family: 'Lato', sans-serif;
+		    
+		}
+		#spinner { display: block; }
+		        #loading-text { display: none; }
+		        #loading-text span { visibility: hidden; }
+
+
+		/* Navbar Start */
+		#navbar{
+		    background:yellow;
+		   
+		}
+		.link{
+		    text-decoration: underline;
+		    margin-right: 40px;
+		    font-size: 22px;
+
+		}
+		a{
+		    margin-right: 50px;
+		}
+
+		#logo{
+		    font-size: 36px;
+		    font-weight: 550;
+		    color: black;
+		    text-shadow: 0px 1px 1px black;
+		    margin-bottom: 5px;
+		    padding: 20px;
+		}
+		#logo span{
+		    color: #ffa500;
+		}
+		.navbar-toggler span{
+		    color: #ffa500;
+		}
+		.navbar-nav{
+		    margin-left: 20px;
+		}
+		.nav-item .nav-link{
+		    font-size: 22px;
+		    font-weight: 550;
+		    color: black;
+		    letter-spacing: 1px;
+		    border-radius: 3px;
+		    transition: 0.5s ease;
+		}
+		.nav-item .nav-link:hover{
+		    background: #ffa500;
+		    color: white;
+		}
+
+
+		#navbar form button{
+		    background: orange;
+		    color: white;
+		    border: none;
+		}
+		.navbar.container{
+		display: flex;
+		    flex-wrap: inherit;
+		    align-items: center;
+		    justify-content: space-between;
+		    max-width: 818px;
+		}
+		/* Navbar End */
+
+		/* Home Section Start */
+		.home{
+		    width: 100%;
+		    height: 90vh;
+		    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2)), url("E:/SpringProjects/Projects/TravallingSystem/src/main/resources/templates/images/bbbq.jpg");
+		    background-repeat: no-repeat;
+		    background-size: cover;
+		}
+		.home .content{
+		    text-align: center;
+		    padding-top: 200px;
+		}
+		.home .content h5{
+		    color: white;
+		    font-size: 38px;
+		    font-weight: 550;
+		    text-shadow: 0px 1px 1px black;
+		}
+		.home .content h1{
+		    color: white;
+		    font-size: 70px;
+		    font-weight: 550;
+		    text-shadow: 0px 1px 1px black;
+		    margin-top: 5px;
+		}
+		.changecontent::after{
+		    content: ' ';
+		    color: #ffa500;
+		    text-shadow: 0px 1px 1px black;
+		    animation: changetext 10s infinite linear;
+		}
+		@keyframes changetext{
+		    0%{content: "Bengaluru";}
+		    10%{content: "Mysore";}
+		    20%{content: "Tumkuru";}
+		    30%{content: "Bidar";}
+		    40%{content: "Gulbarga";}
+		    50%{content: "Raichur";}
+		    60%{content: "Kolar";}
+		    70%{content: "Bijapur";}
+		    80%{content: "Belagavi";}
+		    90%{content: "Mandya";}
+		    100%{content: "Mangaluru";}
+		} 
+		.home .content p{
+		    color: white;
+		    font-size: 15px;
+		    font-weight: 600;
+		    text-shadow: 0px 1px 1px black;
+		    margin-bottom: 30px;
+		    margin-top: 5px;
+		}
+		.home .content a{
+		    padding: 10px;
+		    background: white;
+		    color: black;
+		    letter-spacing: 2px;
+		    font-weight: 550;
+		    border-radius: 5px;
+		    text-decoration: none;
+		    transition: 0.5s;
+		}
+		.home .content a:hover{
+		    background: #ffa500;
+		    color: white;
+		}
+
+		@media (max-width:850px){
+		    .home{
+		        background-position: 50%;
+		    }
+		}
+		@media (max-width:450px){
+		    .home .content h5{
+		        font-size: 25px;
+		    }
+		    .home .content h1{
+		        font-size: 38px;
+		    }
+		    .home .content p{
+		        font-size: 13px;
+		    }
+		}
+		/* Home Section End */
+
+		/* Section Book Start */
+		.book{
+		    background: #f2f3f0;
+		    padding: 30px;
+		}
+		.main-text h1{
+		    text-align: center;
+		    text-shadow: 0px 1px 1px black;
+		    font-weight: 600;
+		}
+		.main-text h1 span{
+		    color: #ffa500;
+		}
+		.book .card{
+		    border-radius: 10px;
+		    box-shadow: 0px 5px 5px -6px black;
+		}
+		.book .row{
+		    margin-top: 30px;
+		}
+		.book form input{
+		    padding: 10px;
+		    color: black;
+		    border: none;
+		    outline: none;
+		    font-size: 15px;
+		    border-radius: 10px;
+		    box-shadow: 0px 5px 5px -6px black;
+		}
+		.book form textarea{
+		    border: none;
+		    border-radius: 10px;
+		    resize: none;
+		    box-shadow: 0px 5px 5px -6px black;
+		    height: 200px;
+		}
+		.book .submit{
+		    width: 160px;
+		    font-size: 16px;
+		    font-weight: 550;
+		    background: #ffa500;
+		    color: white;
+		    margin-top: 10px;
+		    transition: 0.5s;
+		}
+		.book .submit:hover{
+		    width: 170px;
+		}
+		@media (max-width:765px){
+		    .book{
+		        padding: 0;
+		    }
+		    .main-text h1{
+		        padding: 20px;
+		    }
+		}
+		/* Section Book End */
+		/* Section Packages Start */
+		.main-txt h1{
+		    text-align: center;
+		    margin-top: 30px;
+		    font-weight: 600;
+		    text-shadow: 0px 1px 1px black;
+		}
+		.main-txt h1 span{
+		    color: #ffa500;
+		}
+		.packages .card{
+		    border-radius: 5px;
+		    border: none;
+		    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+		}
+		.packages .card img {
+		    border-radius: 5px;
+		    /* Adjust width and height here */
+		    width: auto; /* Change this value to adjust width */
+		    height: 350px; /* This will maintain aspect ratio */
+		}
+		.packages .card .card-body{
+		    background: #e8ece0;
+		    text-align: justify;
+		}
+		.packages .card .card-body h3{
+		    font-size: 25px;
+		    font-weight: 600;
+
+		}
+
+		.packages .card .card-body p{
+		    font-size: 15px;
+		}
+		.checked{
+		    color: #ffa500;
+		}
+		.star i{
+		    font-size: 15px;
+		}
+		.packages .card .card-body h6{
+		    font-size: 20px;
+		}
+		.packages .card .card-body a{
+		    padding: 5px;
+		    text-decoration: none;
+		    background: #ffa500;
+		    color: white;
+		    border-radius: 5px;
+		}
+
+		/* Section Packages End */
+		/* Section Services Start */
+		.services{
+		    background: #f9f9f9;
+		    margin-top: 50px;
+		}
+		.services .card{
+		    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+		    border: none;
+		    cursor: pointer;
+		}
+		.services .card i{
+		    font-size: 80px;
+		    text-align: center;
+		    color: #ffa500;
+		    margin-top: 20px;
+		}
+		.services .card .card-body h3{
+		    font-weight: 600;
+		}
+		.services .card .card-body{
+		    text-align: center;
+		    text-align: justify;
+		}
+		/* Section Services End */
+
+
+
+
+
+		/* Section Gallary Start */
+		.gallary{
+		    margin-top: 50px;
+		}
+		.gallary .card{
+		    border-radius: 10px;
+		    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+		    cursor: pointer;
+		}
+		.gallary .card img{
+		    
+		    border-radius: 10px;
+		    transition: 0.5s;
+		}
+		.gallary .card img:hover{
+		    display: flex;
+		    transform: scale(1.1);
+		}
+		/* Section Gallary End */
+
+
+
+
+		/* About Start */
+		.about{
+		    padding: 20px;
+		    margin-top: 10px;
+		    background:#e8ece0;
+		}
+		.about .card{
+		    border-radius: 10px;
+		}
+		.about .card img{
+		    border-radius: 5px;
+
+		        height: 380px; /* Adjust the height value as needed */
+		    }
+
+		.about h2{
+		    font-weight: 600;
+		    letter-spacing: 1px;
+		}
+		.about p{
+		    font-weight: 500;
+		    text-align: justify;
+		}
+		#about-btn{
+		    width: 150px;
+		    height: 38px;
+		    border: none;
+		    border-radius: 5px;
+		    background: #ffa500;
+		    color: white;
+		    letter-spacing: 2px;
+		    font-weight: 550;
+		    transition: 0.5s ease;
+		    cursor: pointer;
+		}
+		#about-btn:hover{
+		    width: 170px;
+		}
+		@media (max-width:765px){
+		    .about{
+		        padding: 0;
+		    }
+		}
+		/* About End */
+		/* Footer Start */
+		#footer{
+		    width: 100%;
+		    margin-top: 0px;
+		    text-align: center;
+		    background: #292626;
+		}
+		#footer h1{
+		    font-weight: 600;
+		    padding-top: 30px;
+		    text-shadow: 0px 0px 1px black;
+		    color: white;
+		}
+		#footer h1 span{
+		    color: #ffa500;
+		}
+		.p1
+		{
+		    color: white;
+		}
+		.social-links i{
+		    padding: 10px;
+		    border-radius: 5px;
+		    font-size: 20px;
+		    background: black;
+		    color: white;
+		    margin-left: 10px;
+		    margin-bottom: 10px;
+		    transition: 0.5s ease;
+		    cursor: pointer;
+		    
+		    
+		}
+		.social-links i:hover{
+		    background: #ffa500;
+}
+
+#footer {
+            background: #292626;
+            color: white;
+            padding: 20px 0;
+        }
+        .social-links i {
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 20px;
+            background: black;
+            color: white;
+            transition: 0.5s ease;
+        }
+        .social-links i:hover {
+            background: #ffa500;
+        }
+	</style>
+</head>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg" id="navbar">
+      
+          <a class="navbar-brand" href="index" id="logo"><span>T</span>ravel</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span><i class="fa-solid fa-bars"></i></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+              
+              
+              <li class="nav-item">
+                <a class="nav-link" href="/bookings/holidaypackage">Packages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#gallary">Gallary</a>
+              </li>
+
+			  <li class="nav-item">
+                <a class="nav-link" href="/bookings/about">About Us</a>
+              </li>
+             
+			  <li class="nav-item">
+                <a class="nav-link active" href="/bookings/help">Help!</a>
+              </li>
+			  <li class="nav-item">
+                <a class="nav-link active" href="/cancel-ticket">Cancletion</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="/bookings/register">sign up</a>
+              </li>
+          </ul>
+            
+          </div>
+        </div>
+      </nav>
+    <!-- Navbar End -->
+    <!-- Home Section Start -->
+    <div class="home">
+        <div class="content">
+            <h5>Welcome To Karnataka And Maharatra</h5>
+            <h1>Visit <span class="changecontent"></span></h1>
+            <p>As a tourist destination has several interesting places to visit. </p>
+            <a href="#book">Book Now</a>
+        </div>
+    </div>
+    <!-- Home Section End -->
+    <!-- About Start -->
+    <section class="about" id="about">
+      <div class="container-fluid my-5">
+
+        <div class="main-txt">
+          <h1>About <span>Us</span></h1>
+        </div>
+
+        <div class="row" style="margin-top: 0px;">
+
+          <div class="col-md-6 py-3 py-md-0">
+            <div class="card">
+				<video width="496" height="400" style="margin-top: -60;" controls>
+					<source src="https://v.ftcdn.net/02/80/50/31/240_F_280503125_8flApPDkScgh7KQE5ZiWtdUtdqmHhdyf_ST.mp4" type="video/mp4">
+					
+					Your browser does not support the video tag.
+				</video>
+        </div>
+          </div>
+
+          <div class="col-md-6 py-3 py-md-0">
+          
+            <p>A travel agency acts as a bridge between wanderlust and reality, transforming dreams of exploration into tangible itineraries. At the heart of our agency is a passion for adventure and a commitment to crafting unforgettable experiences. With a team of seasoned travelers and destination experts, we curate bespoke journeys tailored to the unique desires and interests of each client. From meticulously planning intricate details like flights and accommodations to suggesting off-the-beaten-path excursions, we ensure every aspect of the journey is seamless and enriching.</p>
+            <button id="about-btn">Read More...</button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- About End -->
+    <!-- Section Book Start -->
+    <section class="book" id="book">
+      <div class="container-fluid my-5">
+
+        <div class="main-text">
+          <h1><span>B</span>ook</h1>
+        </div>
+        
+        <div class="row">
+
+          <div class="col-md-6 py-3 py-md-0">
+            <div class="card">
+              <img src="https://as2.ftcdn.net/v2/jpg/02/80/82/81/1000_F_280828158_ZZ2W8atYMHiSkLoDzxgDHNhdmXJ31jCR.jpg" alt="" height="450px">
+            </div>
+          </div>
+
+          <div class="col-md-6 py-3 py-md-0">
+            <section class="book-section">
+              <h2>Traveler's Book</h2>
+    
+              <!-- Add more destinations as needed -->
+      
+              <!-- Booking Form -->
+              <div class="booking-form">
+                <div class="container-fluid my-5">
+                  <a href="/books">Book now</a>
+                 
+              </div>
+          </section>
+          </div>
+</div>
+        </div>
+      </div>
+    </section>
+    <!-- Section Book End -->
+    <!-- Section Packages Start -->
+    <section class="packages" id="packages">
+      <div class="container-fluid my-5">
+        
+        <div class="main-txt">
+          <h1><span>P</span>ackages</h1>
+        </div>
+        
+		<div class="row" style="margin-top: 30px;">
+
+			<div class="col-md-4 py-3 py-md-0">
+				<div class="card">
+					<img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\imagesfinal\gatewayofindia.jpg" class="card-img-top" alt="Gateway of India">
+					<div class="card-body">
+						<h3>Gateway of India</h3>
+						<p>An iconic arch monument overlooking the Arabian Sea, symbolizing the city’s rich history.</p>
+						<a href="#book" class="btn btn-primary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-md-4 py-3 py-md-0">
+				<div class="card">
+					<img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\imagesfinal\marinedrive.jpg" class="card-img-top" alt="Marine Drive">
+					<div class="card-body">
+						<h3>Marine Drive</h3>
+						<p>A scenic promenade along the coastline, perfect for evening walks with stunning sunset views.</p>
+						<a href="#book" class="btn btn-primary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-md-4 py-3 py-md-0">
+				<div class="card">
+					<img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\imagesfinal\chhatrapati.jpg" class="card-img-top" alt="Chhatrapati Shivaji Maharaj Terminus">
+					<div class="card-body">
+						<h3>Chhatrapati Shivaji Maharaj Terminus</h3>
+						<p>A UNESCO World Heritage site, known for its Victorian Gothic architecture and historical significance.</p>
+						<a href="#book" class="btn btn-primary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-md-4 py-3 py-md-0">
+				<div class="card">
+					<img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\imagesfinal\Elephanta-Caves.jpg" class="card-img-top" alt="Elephanta Caves">
+					<div class="card-body">
+						<h3>Elephanta Caves</h3>
+						<p>Ancient rock-cut temples dedicated to Lord Shiva, located on Elephanta Island.</p>
+						<a href="#book" class="btn btn-primary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-md-4 py-3 py-md-0">
+				<div class="card">
+					<img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\imagesfinal\lonavala.jpg" class="card-img-top" alt="Lonavala">
+					<div class="card-body">
+						<h3>Lonavala</h3>
+						<p>Twin hill stations known for their lush greenery, waterfalls, and scenic viewpoints.</p>
+						<a href="#book" class="btn btn-primary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-md-4 py-3 py-md-0">
+				<div class="card">
+					<img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\imagesfinal\panchgani.jpg" class="card-img-top" alt="Panchgani">
+					<div class="card-body">
+						<h3>Panchgani</h3>
+						<p>A popular hill station with beautiful viewpoints, strawberry farms, and pleasant weather.</p>
+						<a href="#book" class="btn btn-primary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-md-4 py-3 py-md-0">
+				<div class="card">
+					<img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\imagesfinal\Mahabaleshwar.jpg" class="card-img-top" alt="Mahabaleshwar">
+					<div class="card-body">
+						<h3>Mahabaleshwar</h3>
+						<p>Famous for its stunning landscapes, waterfalls, and the source of the Krishna River.</p>
+						<a href="#book" class="btn btn-primary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-md-4 py-3 py-md-0">
+				<div class="card">
+					<img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\imagesfinal\ajanta-caves.jpg" class="card-img-top" alt="Ajanta Caves">
+					<div class="card-body">
+						<h3>Ajanta Caves</h3>
+						<p>UNESCO World Heritage site featuring ancient Buddhist rock-cut caves and murals.</p>
+						<a href="#book" class="btn btn-primary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-md-4 py-3 py-md-0">
+				<div class="card">
+					<img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\imagesfinal\ellora.jpg" class="card-img-top" alt="Ellora Caves">
+					<div class="card-body">
+						<h3>Ellora Caves</h3>
+						<p>Known for its impressive rock-cut architecture representing Buddhism, Hinduism, and Jainism.</p>
+						<a href="#book" class="btn btn-primary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-md-4 py-3 py-md-0">
+				<div class="card">
+					<img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\imagesfinal\mahalaxmi-temple-kolhapur.jpg" class="card-img-top" alt="Kolhapur">
+					<div class="card-body">
+						<h3>Kolhapur</h3>
+						<p>Renowned for its rich history, food, and the historic Mahalaxmi Temple.</p>
+						<a href="#book" class="btn btn-primary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-md-4 py-3 py-md-0">
+				<div class="card">
+					<img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\imagesfinal\shirdi.avif" class="card-img-top" alt="Shirdi">
+					<div class="card-body">
+						<h3>Shirdi</h3>
+						<p>A pilgrimage town famous for the Samadhi of the saint Sai Baba.</p>
+						<a href="#book" class="btn btn-primary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-md-4 py-3 py-md-0">
+				<div class="card">
+					<img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\imagesfinal\alibaug.jpg" class="card-img-top" alt="Alibaug">
+					<div class="card-body">
+						<h3>Alibaug</h3>
+						<p>A coastal town known for its beaches, forts, and water sports activities.</p>
+						<a href="#book" class="btn btn-primary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-md-4 py-3 py-md-0">
+				<div class="card">
+					<img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\imagesfinal\mandwa.jpg" class="card-img-top" alt="Mandwa">
+					<div class="card-body">
+						<h3>Mandwa</h3>
+						<p>A popular getaway with beautiful beaches and scenic views, accessible via ferry from Mumbai.</p>
+						<a href="#book" class="btn btn-primary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-md-4 py-3 py-md-0">
+				<div class="card">
+					<img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\imagesfinal\nasik.jpg" class="card-img-top" alt="Nashik">
+					<div class="card-body">
+						<h3>Nashik</h3>
+						<p>Known for its vineyards, the Kumbh Mela, and the Panchavati temple complex.</p>
+						<a href="#book" class="btn btn-primary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-md-4 py-3 py-md-0">
+				<div class="card">
+					<img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\imagesfinal\khandaala" class="card-img-top" alt="Khandala">
+					<div class="card-body">
+						<h3>Khandala</h3>
+						<p>Famous for its stunning hills, valleys, and the historic Rajmachi Fort.</p>
+						<a href="#book" class="btn btn-primary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-md-4 py-3 py-md-0">
+				<div class="card">
+					<img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\imagesfinal\sindhudug.jpg" class="card-img-top" alt="Sindhudurg Fort">
+					<div class="card-body">
+						<h3>Sindhudurg Fort</h3>
+						<p>A sea fort located on an island, known for its historical significance and beautiful views.</p>
+						<a href="#book" class="btn btn-primary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-md-4 py-3 py-md-0">
+				<div class="card">
+					<img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\imagesfinal\tadoba andhari tiger.webp" class="card-img-top" alt="Tadoba Andhari Tiger Reserve">
+					<div class="card-body">
+						<h3>Tadoba Andhari Tiger Reserve</h3>
+						<p>A wildlife sanctuary known for its tiger population and diverse flora and fauna.</p>
+						<a href="#book" class="btn btn-primary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-md-4 py-3 py-md-0">
+				<div class="card">
+					<img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\imagesfinal\matheran quaint  hill.jpg" class="card-img-top" alt="Matheran">
+					<div class="card-body">
+						<h3>Matheran</h3>
+						<p>A quaint hill station where vehicles are not allowed, known for its lush forests and viewpoints.</p>
+						<a href="#book" class="btn btn-primary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-md-4 py-3 py-md-0">
+				<div class="card">
+					<img src="src/main/resources/static/images/bhandardara.jpg
+					" class="card-img-top" alt="Bhandardara">
+					<div class="card-body">
+						<h3>Bhandardara</h3>
+						<p>A serene hill station famous for its lakes, waterfalls, and the iconic Wilson Dam.</p>
+						<a href="#book" class="btn btn-primary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-md-4 py-3 py-md-0">
+				<div class="card">
+					<img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\imagesfinal\kamshet sports.webp" class="card-img-top" alt="Kamshet">
+					<div class="card-body">
+						<h3>Kamshet</h3>
+						<p>Popular for paragliding and adventure sports, surrounded by scenic hills and lakes.</p>
+						<a href="#book" class="btn btn-primary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+		
+
+        <div class="row" style="margin-top: 30px;">
+
+          <div class="col-md-4 py-3 py-md-0">
+
+            <div class="card">
+              <img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\images\chamundeshwari-temple-mysore-4.jpg" alt="">
+              <div class="card-body">
+                <h3>CHAMUNDESHWARI TEMPLE</h3>
+                <p>Located 12 km from Mysuru, the Chamundi Hills is home to the Goddess Chamundeshwari, the patron deity of the Mysuru Royal Family. </p>
+                
+                <h6>Price: <strong>RS.500</strong></h6>
+                <a href="#book">Book Now</a>
+              </div>
+            </div>
+
+          </div>
+		 
+          <div class="col-md-4 py-3 py-md-0">
+
+            <div class="card">
+              <img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\images\iskon.jpg.webp" alt="">
+              <div class="card-body">
+                <h3>ISKCON TEMPLE</h3>
+                <p>Sri Radha Krishna-Chandra Temple is one of the largest Krishna-Hindu temples in the world. It is situated in Bangalore in the Indian state of Karnataka.</p>
+                
+                <h6>Price: <strong>RS.500</strong></h6>
+                <a href="#book">Book Now</a>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+
+            <div class="card">
+              <img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\images\tumkur.jpg" alt="">
+              <div class="card-body">BIhMRNB
+                <h3>PEACOCK HILL</h3>
+                <p>Mandara Giri Jain Temple is well known as Basadi betta (People also called as Peacock Temple). Looking for a calm, quiet place, then this is the best place that has all.</p>
+                
+                <h6>Price: <strong>RS.500</strong></h6>
+                <a href="#book">Book Now</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="row" style="margin-top: 30px;">
+
+          <div class="col-md-4 py-3 py-md-0">
+
+            <div class="card">
+              <img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\images\BUDHAVEERA.jpg"alt="">
+              <div class="card-body">
+                <h3>BUDDHA VIHAR </h3>
+                <p>Spread over 18 acres, it has a main building, a meditation centre at the cellar and a Lord Buddha chaitya (temple in Pali) on the ground floor.</p>
+                
+                <h6>Price: <strong>RS.500</strong></h6>
+                <a href="#book">Book Now</a>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+
+            <div class="card">
+              <img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\images\Bidar_fort.jpg"alt="">
+              <div class="card-body">
+                <h3>BIDAR FORT</h3>
+                <p>Bidar fort is considered as one of the most formidable forts of the country. Bidar city was distinctly planned and built. The main citadel complex housed the royal palaces.</p>
+               
+                <h6>Price: <strong>RS.500</strong></h6>
+                <a href="#book">Book Now</a>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+
+            <div class="card">
+              <img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\images\Raichur-Fort.jpg" alt="">
+              <div class="card-body">
+                <h3>RAICHUR FORT</h3>
+                <p>Raichur Fort, a magnificent and historically significant structure, stands proudly in the heart of Raichur, a city located in the southern Indian state of Karnataka.</p>
+               
+                <h6>Price: <strong>RS.500</strong></h6>
+                <a href="#book">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section Packages End -->
+    <!-- Section Services Start -->
+    <section class="services" id="services">
+      <div class="container-fluid my-5">
+
+        <div class="main-txt">
+          <h1><span>S</span>ervices</h1>
+        </div>
+
+        <div class="row" style="margin-top: 30px;">
+
+          <div class="col-md-4 py-3 py-md-0">
+
+            <div class="card">
+              <i class="fas fa-hotel"></i>
+              <div class="card-body">
+                <h3>Affordable Hotel</h3>
+                <p>Explore our curated list of affordable hotels, offering peace of mind and comfort without compromising on quality. Book now and start your journey with the best of both worlds - affordability and excellence. </p>
+                <a href="https://www.booking.com/searchresults.en-gb.html?aid=311984&label=the-traveler-hostel-KhJnUbjLnyXnqD7mgQcfnwS589134532043%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-941568283347%3Alp1007768%3Ali%3Adec%3Adm&gclid=EAIaIQobChMIsuDiv76mhwMVuqtmAh1byAjCEAAYAiAAEgKIKvD_BwE&highlighted_hotels=5810345&redirected=1&city=-931336&hlrd=no_dates&source=hotel&expand_sb=1&keep_landing=1&sid=416978e5aebb7c8a6ee6133f7be93079"class="btn btn-primary">Book Now</a>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+                <i class="fas fa-utensils"></i>
+                <div class="card-body">
+                    <h3>Food & Drinks</h3>
+                    <p>Experience the local flavors with our food and drinks tours. From delicious dishes to refreshing beverages, there's something for everyone. Book now and taste the best of your destination</p>
+                    <a href="#book" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+
+            <div class="card">
+              <i class="fas fa-bullhorn"></i>
+              <div class="card-body">
+                <h3>Safty Guide</h3>
+                <p>Stay safe and secure on your travels with our comprehensive safety guide. From essential tips to emergency protocols, we've got you covered. Travel confidently knowing you're prepared for any situation. </p>
+                <a href=""class="btn btn-primary">Book Now</a>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="row" style="margin-top: 30px;">
+
+          <div class="col-md-4 py-3 py-md-0">
+
+            <div class="card">
+              <i class="fas fa-globe-asia"></i>
+              <div class="card-body">
+                <h3>Around The Karnataka</h3>
+                <p>Discover the wonders of Karnataka with our guided tours. Explore its rich heritage, stunning landscapes, and vibrant culture. Book now for an unforgettable journey through Karnataka
+
+                </p>
+                <a href=""class="btn btn-primary">Book Now</a>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+
+            <div class="card">
+              <i class="fas fa-plane"></i>
+              <div class="card-body">
+                <h3>Fastest Travel</h3>
+                <p>Experience the thrill of speed with our Fastest Travel Tour! Zoom across landscapes and zip through cities in record time, making the most of every moment and destination </p>
+                <a href="https://www.redbus.com/"class="btn btn-primary">Book Now</a>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-md-4 py-3 py-md-0">
+
+              <div class="card">
+                <i class="fas fa-hiking"></i>
+                <div class="card-body">
+                  <h3>Adventures</h3>
+                  <p>Embark on the adventure of a lifetime with our Adventures Travel Tour! Dive into the heart of the wilderness, scale towering peaks, and explore hidden gems off the beaten path. </p>
+                  <a href="https://www.redbus.com/"class="btn btn-primary">Book Now</a>
+                </div>
+              </div>
+    
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section Services End -->
+    <!-- Section Gallary Start -->
+    <section class="gallary" id="gallary">
+      <div class="container">
+        <div class="main-txt">
+         <marquee> <h1><span>G</span>allary</h1> </marquee>
+        </div>
+
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="1000">
+              <img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\images\isha foundation.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\images\kudala.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\images\laa bagh.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\images\Sun Shine Nandi Hills Karnataka Wallpaper.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\images\Murudeshwar.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="e:\SpringProjects\Projects\TravallingSystem\src\main\resources\templates\images\karanji-lake.jpg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+    <!-- Section Gallary End -->
+    <!-- Footer Start -->
+   
+	<footer id="footer">
+	        <div class="container text-center">
+	            <h5>Follow Us</h5>
+	            <div class="social-links my-3">
+	                <a href="https://www.facebook.com/login/"><i class="fa-brands fa-facebook"></i></a>
+	                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+	                <a href="https://www.instagram.com/accounts/login/?hl=en"><i class="fa-brands fa-instagram"></i></a>
+	                <a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+	            </div>
+	            <p>© 2024 Travel Agency. All rights reserved.</p>
+	        </div>
+	    </footer>
+    <!-- Footer End -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
